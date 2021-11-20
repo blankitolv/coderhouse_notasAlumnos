@@ -7,6 +7,7 @@ const div__lucas=document.createElement('DIV');
 
 // asigno id "div__lucas" al div
 div__lucas.id= 'div__lucas'
+div__lucas.setAttribute("style","margin-left:10px;")
 
 // ------- TITULO DE LAS NOTAS ---------
 // creo un titulo para la cabecera 
@@ -44,7 +45,7 @@ div__lucas.appendChild(inputNota__lucas);
 // -------- 2do Div --------
 const divNotas__lucas=document.createElement('DIV');
 divNotas__lucas.id='divNotas';
-divNotas__lucas.setAttribute("style", "overflow-y: auto;height: 70vh; width:100%;");
+divNotas__lucas.setAttribute("style", "overflow-y: auto;height: 75vh; width:100%; border:1px solid gray");
 div__lucas.appendChild(divNotas__lucas)
 
 
@@ -105,6 +106,7 @@ function agregaEventoBorrar(){
      })
      agregaEstilo();
 }
+// agrega estilos a .cadaNota para que se vea visualmente mejor las notas y el boton de borrar nota
 function agregaEstilo(){
      let aux= document.querySelectorAll('.cadaNota');
      aux.forEach(element => {
@@ -115,6 +117,7 @@ function agregaEstilo(){
      
 
 }
+//si el localStorage tiene la key de notas la descarga en la sección de notas
 if (localStorage.getItem(`${nameLS}`)) {
      let idNumero=JSON.parse(localStorage.getItem(`${nameLS}`)).length;
      let oldNotes=JSON.parse(localStorage.getItem(`${nameLS}`));
@@ -138,8 +141,10 @@ if (localStorage.getItem(`${nameLS}`)) {
                botonx.className='botonx';
                botonx.innerHTML='x';
                botonx.style.height = "20px";
+               // appendeo el botonx
                cadaNota2.appendChild(botonx);
                divNotas__lucas.appendChild(cadaNota2);
+               // le agrego el evento
                agregaEventoBorrar();
           });
      }
