@@ -7,7 +7,7 @@ const div__lucas=document.createElement('DIV');
 
 // asigno id "div__lucas" al div
 div__lucas.id= 'div__lucas'
-div__lucas.setAttribute("style","margin-left:10px;")
+div__lucas.setAttribute("style","margin-left:10px;max-width:30%;")
 
 // ------- TITULO DE LAS NOTAS ---------
 // creo un titulo para la cabecera 
@@ -25,6 +25,8 @@ div__lucas.appendChild(h2__lucas);
 // ------- BOTON ----------
 //CREO EL BOTON DE AGREGAR NOTA
 const addButton__lucas = document.createElement ('BUTTON')
+addButton__lucas.setAttribute("style", "background-color:lightgreen; border: 1px solid green;");
+
 // ** actualizacion cambiar button por submit y agregarle al evento preventdefault
 // ************
 
@@ -112,7 +114,8 @@ function agregaEstilo(){
      aux.forEach(element => {
           element.style.display="flex";
           element.style.justifyContent = "space-between";
-          element.style.alignItems = "center"
+          element.style.alignItems = "center";
+          element.style.margin="auto auto auto 10px";
      })
      
 
@@ -136,11 +139,13 @@ if (localStorage.getItem(`${nameLS}`)) {
                // MUESTRO LA HORA Y LA NOTA
                pNota2.innerHTML=`${ahora2}: ${laNota2}`
                cadaNota2.appendChild(pNota2);
-               //CREO EL BOTON DE BORRAR NOTA 
+
+               //CREO EL BOTON x DE BORRAR NOTA 
                const botonx=document.createElement('BUTTON');
+               botonx.setAttribute("style", "height:20px; color:white; font-weight:600; background-color:red; border: 1px solid red;");
                botonx.className='botonx';
                botonx.innerHTML='x';
-               botonx.style.height = "20px";
+
                // appendeo el botonx
                cadaNota2.appendChild(botonx);
                divNotas__lucas.appendChild(cadaNota2);
@@ -167,6 +172,7 @@ agregaNota.addEventListener('click',()=> {
      cadaNota.appendChild(pNota);
      //CREO EL BOTON DE BORRAR NOTA 
      const botonx=document.createElement('BUTTON');
+     botonx.setAttribute("style", "height:20px; color:white; font-weight:600; background-color:red; border: 1px solid red;");
      botonx.className='botonx';
      botonx.innerHTML='x';
      botonx.style.height = "20px";
