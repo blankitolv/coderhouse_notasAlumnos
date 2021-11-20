@@ -44,7 +44,7 @@ div__lucas.appendChild(inputNota__lucas);
 // -------- 2do Div --------
 const divNotas__lucas=document.createElement('DIV');
 divNotas__lucas.id='divNotas';
-divNotas__lucas.setAttribute("style", "overflow-y: auto;height: 70vh;");
+divNotas__lucas.setAttribute("style", "overflow-y: auto;height: 70vh; width:100%;");
 div__lucas.appendChild(divNotas__lucas)
 
 
@@ -109,8 +109,8 @@ function agregaEstilo(){
      let aux= document.querySelectorAll('.cadaNota');
      aux.forEach(element => {
           element.style.display="flex";
-          element.style.justifyContent = "space-around";
-          element.style.alignItems = "baseline"
+          element.style.justifyContent = "space-between";
+          element.style.alignItems = "center"
      })
      
 
@@ -151,6 +151,9 @@ agregaNota.addEventListener('click',()=> {
      // CREO UN DIV PARA CADA NOTA
      let cadaNota=document.createElement('DIV');
      cadaNota.className='cadaNota';
+     cadaNota.setAttribute("style","width:90%;")
+     // divNotas__lucas.setAttribute("style", "overflow-y: auto;height: 70vh; width:100%;");
+
      //CREO ETIQUETA P DONDE VA EL TEXTO DE LA NOTA
      let pNota=document.createElement ('P');
      let laNota=document.querySelector('#inputNota');
